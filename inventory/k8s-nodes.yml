@@ -1,8 +1,8 @@
 ---
-k8sMasters:
+k8s-nodes:
   hosts:
     # Put your KVM host connection and settings here
-    k8sMaster0:
+    k8s-node-[0:2]:
       virt_infra_distro_image: CentOS-7-x86_64-GenericCloud.qcow2
       ansible_python_interpreter: /usr/bin/python
       virt_infra_timezone: "Asia/Shanghai"
@@ -10,7 +10,7 @@ k8sMasters:
         - yum -y install yum-plugin-fastestmirror
   vars:
     virt_infra_root_password: password
-    virt_infra_disk_size: 80
+    virt_infra_disk_size: 40
     virt_infra_ram: 4096
     virt_infra_ram_max: 8192
     virt_infra_cpus: 4
@@ -19,4 +19,3 @@ k8sMasters:
     virt_infra_networks:
       - name: br0
         type: bridge
-        mac: "52:54:00:81:45:70"
