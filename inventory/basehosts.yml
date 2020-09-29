@@ -1,0 +1,29 @@
+---
+## YAML based inventory, see:
+## https://docs.ansible.com/ansible/latest/plugins/inventory/yaml.html
+#
+## Define the KVM host, it is referenced in the play by the "kvmhost" group
+## This example is localhost, but you can set whatever vars you need to here
+## The KVM host is where the networks are defined, under either "absent" or "present"
+## This allows us to clean up and remove networks you no-longer need
+basehosts:
+  hosts:
+    # Put your KVM host connection and settings here
+    basehost-0:
+      virt_infra_distro_image: CentOS-7-x86_64-GenericCloud.qcow2
+      ansible_python_interpreter: /usr/bin/python
+      virt_infra_timezone: "Asia/Shanghai"
+      virt_infra_disk_cmd:
+        - yum -y install yum-plugin-fastestmirror
+  vars:
+    virt_infra_root_password: password
+    virt_infra_disk_size: 80
+    virt_infra_ram: 4096
+    virt_infra_ram_max: 8192
+    virt_infra_cpus: 4
+    virt_infra_cpus_max: 8
+    virt_infra_state: running
+    virt_infra_networks:
+      - name: br0
+        type: bridge
+        mac: "52:54:00:81:45:60"
