@@ -1,0 +1,23 @@
+---
+ubuntu20Server:
+  hosts:
+    ubuntu20Server:
+      virt_infra_state: running
+      virt_infra_distro: ubuntu
+      virt_infra_distro_image: focal-server-cloudimg-amd64.img
+      virt_infra_timezone: "Asia/Shanghai"
+      virt_infra_networks:
+        - name: br0
+          type: bridge
+          mac: "52:54:00:81:45:90"
+      virt_infra_disk_cmd:
+        - echo 'hello KVM'
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    virt_infra_root_password: password
+    virt_infra_disk_size: 80
+    virt_infra_ram: 4096
+    virt_infra_ram_max: 8192
+    virt_infra_cpus: 4
+    virt_infra_cpus_max: 8
+    virt_infra_state: running
