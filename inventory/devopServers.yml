@@ -10,38 +10,24 @@ devopServers:
         - name: br0
           type: bridge
           mac: "52:54:00:81:45:80"
-      virt_infra_disk_cmd:
-        - echo 'fastestmirror=1' >> /tmp.txt
-        - echo 'deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse' >> /etc/apt/sources.list
     devopsServer0:
       ansible_python_interpreter: /usr/bin/python3
       virt_infra_networks:
         - name: br0
           type: bridge
           mac: "52:54:00:81:45:81"
-      virt_infra_disk_cmd:
-        - echo 'fastestmirror=1' >> /tmp.txt
-        - echo 'deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse' >> /etc/apt/sources.list
     devopsServer1:
       ansible_python_interpreter: /usr/bin/python3
       virt_infra_networks:
         - name: br0
           type: bridge
           mac: "52:54:00:81:45:82"
-      virt_infra_disk_cmd:
-        - echo 'fastestmirror=1' >> /tmp.txt
-        - echo 'deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse' >> /etc/apt/sources.list
     devopsServer2:
       ansible_python_interpreter: /usr/bin/python3
       virt_infra_networks:
         - name: br0
           type: bridge
           mac: "52:54:00:81:45:83"
-      virt_infra_disk_cmd:
-        - echo 'fastestmirror=1' >> /tmp.txt
-        - echo 'deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse' >> /tmp.txt
-        - echo 'f33333' >> /tmp.txt
-        - echo 'deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse' >> /etc/apt/sources.list
   vars:
     virt_infra_state: running
     virt_infra_distro: ubuntu
@@ -57,20 +43,3 @@ devopServers:
     virt_infra_networks:
       - name: br0
         type: bridge
-    virt_infra_disk_cmd:
-      - echo 'fastestmirror=1' >> /tmp.txt
-      - echo 'deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse' >> /etc/apt/sources.list
-      # - echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse">> /etc/apt/sources.list
-      # - echo "deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse" >> /etc/apt/sources.list
-      # - echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse" >> /etc/apt/sources.list
-      # - echo "deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse" >> /etc/apt/sources.list
-      # - echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse" >> /etc/apt/sources.list
-      # - echo "deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse" >> /etc/apt/sources.list
-      # - echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse" >> /etc/apt/sources.list
-      # - echo "deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse" >> /etc/apt/sources.list
-      # - echo "deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse" >> /etc/apt/sources.list
-      # - apt update
-      # - apt install -y net-tools
-      # - apt install -y lsb
-      # - useradd -m devops
-      # - echo "devops:password"| chpasswd
