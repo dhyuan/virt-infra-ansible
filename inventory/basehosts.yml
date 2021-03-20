@@ -18,4 +18,4 @@ basehosts:
     virt_infra_networks:
       - name: br0
         type: bridge
-        mac: "52:54:00:81:45:60"
+
