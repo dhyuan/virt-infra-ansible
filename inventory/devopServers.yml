@@ -4,25 +4,27 @@
 devopServers:
   hosts:
     repositoryServer:
+      virt_infra_autostart: yes
       ansible_python_interpreter: /usr/bin/python3
       virt_infra_disk_size: 500
       virt_infra_networks:
         - name: br0
           type: bridge
           mac: "52:54:00:81:45:80"
-    devopsServer0:
+    devopServer0:
+      virt_infra_autostart: yes
       ansible_python_interpreter: /usr/bin/python3
       virt_infra_networks:
         - name: br0
           type: bridge
           mac: "52:54:00:81:45:81"
-    devopsServer1:
+    devopServer1:
       ansible_python_interpreter: /usr/bin/python3
       virt_infra_networks:
         - name: br0
           type: bridge
           mac: "52:54:00:81:45:82"
-    devopsServer2:
+    devopServer2:
       ansible_python_interpreter: /usr/bin/python3
       virt_infra_networks:
         - name: br0
