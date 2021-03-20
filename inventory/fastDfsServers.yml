@@ -1,0 +1,43 @@
+---
+## YAML based inventory, see:
+## https://docs.ansible.com/ansible/latest/plugins/inventory/yaml.html
+fastDfsServers:
+  hosts:
+    dfsServer0:
+      ansible_python_interpreter: /usr/bin/python3
+      virt_infra_networks:
+        - name: br0
+          type: bridge
+          mac: "52:54:00:81:45:10"
+    dfsServer1:
+      ansible_python_interpreter: /usr/bin/python3
+      virt_infra_networks:
+        - name: br0
+          type: bridge
+          mac: "52:54:00:81:45:11"
+    dfsServer2:
+      ansible_python_interpreter: /usr/bin/python3
+      virt_infra_networks:
+        - name: br0
+          type: bridge
+          mac: "52:54:00:81:45:12"
+  vars:
+    virt_infra_state: running
+    virt_infra_distro: ubuntu
+    virt_infra_distro_image: focal-server-cloudimg-amd64.img
+    virt_infra_autostart: yes
+    ansible_python_interpreter: /usr/bin/python3
+    virt_infra_timezone: "Asia/Shanghai"
+    virt_infra_root_password: password
+    virt_infra_disk_size: 20
+    virt_infra_ram: 4094
+    virt_infra_ram_max: 8192
+    virt_infra_cpus: 4
+    virt_infra_cpus_max: 8
+    virt_infra_networks:
+      - name: br0
+        type: bridge
+    virt_infra_disk_cmd:
+      - apt update
+      - apt install -y net-tools
+      - apt install -y git gcc g++ make automake autoconf libtool pcre2-utils libpcre2-dev zlib1g zlib1g-dev openssl libssh-dev install libpcre3 libpcre3-dev wget vim 
